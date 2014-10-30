@@ -10,7 +10,7 @@ class Hybrid
 {
 
    private:
-      QueueLinked<DoubleNode<T>>* q;
+      QueueLinked<T>* q;
       SortedListDoublyLinked<T>* sldl;
 
    public:
