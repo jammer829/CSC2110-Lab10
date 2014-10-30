@@ -8,7 +8,7 @@ using CSC2110::QueueLinked;
 template < class T >
 class Hybrid
 {
-// test
+
    private:
       QueueLinked<T>* q;
       SortedListDoublyLinked<T>* sldl;
@@ -43,6 +43,33 @@ Hybrid<T>::~Hybrid()
 //as outlined in the Lab 10 description
 //simply comment the first implementation out when working on the second implementation
 //use the getKey method to dequeue/remove
+
+bool Hybrid<T>::isEmpty()
+{
+	bool empty;
+	empty=q->isEmpty();
+	return empty;
+}
+
+void Hybrid<T>::enqueue(T* item)
+{
+	q->enqueue(item);
+	sldl->add(item);
+}
+
+T* Hybrid<T>::dequeue()
+{
+	T* dqed;
+	dqed=q->dequeue();
+	sldl->remove(dqed->getKey());
+	return dqed;
+}
+
+ListDoublyLinkedIterator<T>* Hybrid::iterator()
+{
+	ListDoublyLinkedIterator<T>* iter= new sldl->iterator();
+	return iter;
+}
 
 
 
