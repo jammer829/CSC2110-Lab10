@@ -10,7 +10,7 @@ class Hybrid
 {
 
    private:
-      QueueLinked<T>* q;
+      QueueLinked<DoubleNode<T>>* q;
       SortedListDoublyLinked<T>* sldl;
 
    public:
@@ -53,16 +53,27 @@ bool Hybrid<T>::isEmpty()
 
 void Hybrid<T>::enqueue(T* item)
 {
-	q->enqueue(item);
-	sldl->add(item);
+	DoubleNode<T>* temp = new DoubleNode();
+	temp = sldl->addDN(item);
+	q->enqueue(temp);
+	
+	
+	
+	//q->enqueue(item);
+	//sldl->add(item);
 }
 
 T* Hybrid<T>::dequeue()
 {
-	T* dqed;
-	dqed=q->dequeue();
-	sldl->remove(dqed->getKey());
-	return dqed;
+	DoubleNode<T>* temp = q->dequeue();
+	sldl->remove((temp->getItem()->getKey());
+
+
+
+	//T* dqed;
+	//dqed=q->dequeue();
+	//sldl->remove(dqed->getKey());
+	//return dqed;
 }
 
 ListDoublyLinkedIterator<T>* Hybrid::iterator()

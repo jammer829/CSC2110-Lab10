@@ -15,8 +15,7 @@ class SortedListDoublyLinked
       DoubleNode<T>* locateNodeRemove(String* sk);
       DoubleNode<T>* locateNodeAdd(T* item);
 
-      DoubleNode<T>* addDN(T* item);
-      T* remove(DoubleNode<T>* curr);
+      
 
       DoubleNode<T>* findHead();
       DoubleNode<T>* findTail();
@@ -37,6 +36,9 @@ class SortedListDoublyLinked
       void remove(String* sk);
 
       ListDoublyLinkedIterator<T>* iterator();
+	  
+	  DoubleNode<T>* addDN(T* item);
+      T* remove(DoubleNode<T>* curr);
 
 };
 
@@ -96,7 +98,7 @@ T* SortedListDoublyLinked<T>::remove(DoubleNode<T>* curr)
 		curr->setPrev(NULL);
 	}
 
-
+	
 
 
 
