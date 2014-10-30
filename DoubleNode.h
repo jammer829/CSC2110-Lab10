@@ -1,7 +1,3 @@
-#if !defined (NULL)
-#define NULL 0
-#endif
-
 #if !defined (DOUBLENODE_H)
 #define DOUBLENODE_H
 
